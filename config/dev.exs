@@ -4,7 +4,7 @@ use Mix.Config
 config :codebeam_2021, Codebeam2021.Repo,
   username: "postgres",
   password: "postgres",
-  database: "codebeam_2021_dev",
+  database: "postgres",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10

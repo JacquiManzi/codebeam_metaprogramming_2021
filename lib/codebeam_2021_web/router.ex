@@ -1,12 +1,17 @@
 defmodule Codebeam2021Web.Router do
   use Codebeam2021Web, :router
 
+  pipeline :access_restriction do
+    plug(Codebeam2021.AccessRestrictionPlug)
+  end
+
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug :access_restriction
   end
 
   pipeline :api do
@@ -17,6 +22,7 @@ defmodule Codebeam2021Web.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/test", PageController, :test
   end
 
   # Other scopes may use custom stacks.

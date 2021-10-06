@@ -12,11 +12,10 @@ defmodule Codebeam2021.Authorizations do
       }),
       do: :disabled
 
-  # Special auth for creating an organization when a user does not have one
   allowed_paths_for(:user, [
-    %{method: "POST", path_info: ["test"]},
-    %{method: "GET", path_info: ["test"]},
-    %{method: "POST", path_info: ["test"]}
+    %{method: "POST", path_info: ["user"]},
+    %{method: "GET", path_info: ["user"]},
+    %{method: "POST", path_info: ["user"]}
   ])
 
   # Generate the catch-all fallback

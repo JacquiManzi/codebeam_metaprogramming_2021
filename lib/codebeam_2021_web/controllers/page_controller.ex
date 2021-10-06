@@ -5,7 +5,11 @@ defmodule Codebeam2021Web.PageController do
     render(conn, "index.html")
   end
 
-  def test(conn, _params) do
-    render(conn, "test.html")
+  def user(conn, _params) do
+    render(conn, "user.html")
+  end
+
+  def admin_user(conn, _params) do
+    render(conn, "admin_user.html")
   end
 end

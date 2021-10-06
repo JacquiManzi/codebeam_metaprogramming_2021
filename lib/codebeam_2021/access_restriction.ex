@@ -7,6 +7,8 @@ defmodule Codebeam2021.AccessRestrictionPlug do
   def init(default), do: default
 
   def call(conn, _opts) do
+    #    IO.inspect "conn"
+    #    IO.inspect conn
     Codebeam2021.Authorizations.allow?(conn)
     |> authorize(conn)
   end

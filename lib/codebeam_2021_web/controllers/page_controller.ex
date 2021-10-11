@@ -6,10 +6,12 @@ defmodule Codebeam2021Web.PageController do
   end
 
   def user(conn, _params) do
+    conn = conn |> assign(:user, true)
     render(conn, "user.html")
   end
 
   def admin_user(conn, _params) do
+    conn = conn |> assign(:admin_user, true)
     render(conn, "admin_user.html")
   end
 end

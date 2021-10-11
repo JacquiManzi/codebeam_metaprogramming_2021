@@ -13,7 +13,6 @@ defmodule Codebeam2021.Authorizations do
       do: :disabled
 
   allowed_paths_for(:user, [
-    %{method: "POST", path_info: ["user"]},
     %{method: "GET", path_info: ["user"]},
     %{method: "POST", path_info: ["user"]}
   ])
